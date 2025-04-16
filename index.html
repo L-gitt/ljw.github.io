@@ -1,1 +1,128 @@
-
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>杭宁双城记：六龙腾飞与数智新篇</title>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/echarts.min.js"></script>
+	<script type="text/javascript" src="js/china.js"></script>
+	<script type="text/javascript" src="js/jiangsu.js"></script>
+	<script type="text/javascript" src="js/zhejiang.js"></script>
+	<script type="text/javascript" src="js/map.js"></script>
+	<script type="text/javascript" src="js/js.js"></script>
+	<script type="text/javascript" src="js/Bubble.js"></script>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="head clearfix">
+		<h1 class="pulll_left">杭宁双城记：六龙腾飞与数智新篇</h1>
+		<div class="time" id="showTime">2018/6/12 17:00:12</div>
+		<script>
+			var t = null;
+			t = setTimeout(time,1000);//開始运行
+			function time(){
+				clearTimeout(t);//清除定时器
+				dt = new Date();
+					var y=dt.getFullYear();
+					var mt=dt.getMonth()+1;
+					var day=dt.getDate();
+				var h=dt.getHours();//获取时
+				var m=dt.getMinutes();//获取分
+				var s=dt.getSeconds();//获取秒
+				document.getElementById("showTime").innerHTML = y+"/"+mt+"/"+day+" "+h+":"+m+":"+s+"";
+				t = setTimeout(time,1000); //设定定时器，循环运行     
+			} 
+		</script>
+	</div>
+	<div class="mainbox">
+		<ul class="clearfix nav1">
+			<li style="width: 22%">
+				<div class="box">
+					<div class="tit">全国专利申请与授权数</div>
+					<div class="boxnav" style="height: 225px;">
+						<div class="" style="height: 225px" id="echart1"></div>
+					</div>
+				</div>
+				<div class="box">
+					<div class="tit">高技术产业相关数据雷达图</div>
+					<div class="boxnav" style="height: 225px;">
+						<div class="" style="height: 225px" id="echart6"></div>
+					</div>
+				</div>
+			</li>
+			<li style="width: 22%">
+				<div class="box">
+					<div class="tit">985高校数据雷达图</div>
+					<div class="boxnav" style="height: 225px;">
+						<div class="" style="height: 225px" id="echart7"></div>
+					</div>
+				</div>
+				<div class="box">
+					<div class="tit">高技术产业专利申请与有效数</div>
+					<div class="boxnav" style="height: 225px;">
+						<div class="" style="height: 225px" id="echart4"></div>
+					</div>
+				</div>
+			</li>
+			<li style="width: 34%">
+				<div class="box">
+					<div class="tit">全国大模型备案数</div>
+					<div class="boxnav mapc" style="height: 505px; position: relative">
+						<div class="map" id="map"></div>
+						
+						<script>
+						$(".mapbtn a").hover(function(){
+							var ind=$(this).index()
+							$(".mapnav ul").eq(ind).show().siblings().hide()
+						})
+						</script>
+					</div>
+				</div>
+			</li>
+			<li style="width: 22%">
+				<div class="box">
+					
+					<div class="tit">江苏省AI大模型数</div>
+					<div class="boxnav" style="height: 225px;">
+						<div class="" style="height: 225px" id="echart2"></div>
+					</div>
+				</div>
+				<div class="box">
+					<div class="tit">浙江省AI大模型数</div>
+					<div class="boxnav" style="height: 225px;">
+						<div class="" style="height: 225px" id="echart3"></div>
+					</div>
+				</div>
+			</li>
+		</ul>
+		<div class="box" style="padding: 20px 0;">
+			<ul class="clearfix nav2 ">
+				<li style="width:30%">
+					<div class="tit01">中国科技数据图</div>
+					<div class="ftechart" style="height: 200px;">
+						<div class="" style="height: 200px" id="echart8"></div>
+					</div>
+				</li>
+				<li style="width:25%">
+					<div class="tit01">南京与杭州第三产业占比对比(2024年)</div>
+					<div class="ftechart" style="height: 200px;">
+						<div class="" style="height: 200px" id="echart9"></div>
+					</div>
+				</li>
+				<li style="width:25%">
+					<div class="tit01">江浙大模型备案时间分类</div>
+					<div class="ftechart" style="height: 200px;">
+						<div class="" style="height: 200px" id="echart10"></div>
+					</div>
+				</li>
+				<li style="width:20%">
+					<div class="tit01">2024年南京与杭州研发经费投入对比</div>
+					<div class="ftechart" style="height: 200px;">
+						<div class="" style="height: 200px" id="echart11"></div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
